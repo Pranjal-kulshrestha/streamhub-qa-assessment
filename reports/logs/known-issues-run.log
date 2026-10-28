@@ -1,0 +1,114 @@
+
+> streamhub-qa-assessment@1.0.0 test:known-issues
+> cucumber-js --profile known
+
+This Node.js version (v25.1.0) has not been tested with this version of Cucumber; it should work normally, but please raise an issue if you see anything unexpected.
+..F...F...F...F...F...F.
+
+Failures:
+
+1) Scenario: The API should reject invalid input with a 4xx error # features\api_posts.feature:40
+   √ Before # src\support\hooks.ts:33
+   √ When I send a POST to "/posts" with the "missing_userid" payload # src\steps\api.steps.ts:7
+       Attachment (text/x.cucumber.log+plain)
+   × Then the response status is a client error # src\steps\api.steps.ts:36
+       Error: invalid input should be rejected with a 4xx status, got 201
+
+       expect(received).toBeGreaterThanOrEqual(expected)
+
+       Expected: >= 400
+       Received:    201
+           at captureRawStack (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+           at callMatcherAsStep (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13316:57)
+           at Object.toBeGreaterThanOrEqual (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13308:23)
+           at CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\api.steps.ts:38:87)
+   √ After # src\support\hooks.ts:37
+
+2) Scenario: The API should reject invalid input with a 4xx error # features\api_posts.feature:41
+   √ Before # src\support\hooks.ts:33
+   √ When I send a POST to "/posts" with the "missing_title" payload # src\steps\api.steps.ts:7
+       Attachment (text/x.cucumber.log+plain)
+   × Then the response status is a client error # src\steps\api.steps.ts:36
+       Error: invalid input should be rejected with a 4xx status, got 201
+
+       expect(received).toBeGreaterThanOrEqual(expected)
+
+       Expected: >= 400
+       Received:    201
+           at captureRawStack (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+           at callMatcherAsStep (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13316:57)
+           at Object.toBeGreaterThanOrEqual (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13308:23)
+           at CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\api.steps.ts:38:87)
+   √ After # src\support\hooks.ts:37
+
+3) Scenario: The API should reject invalid input with a 4xx error # features\api_posts.feature:42
+   √ Before # src\support\hooks.ts:33
+   √ When I send a POST to "/posts" with the "empty_object" payload # src\steps\api.steps.ts:7
+       Attachment (text/x.cucumber.log+plain)
+   × Then the response status is a client error # src\steps\api.steps.ts:36
+       Error: invalid input should be rejected with a 4xx status, got 201
+
+       expect(received).toBeGreaterThanOrEqual(expected)
+
+       Expected: >= 400
+       Received:    201
+           at captureRawStack (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+           at callMatcherAsStep (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13316:57)
+           at Object.toBeGreaterThanOrEqual (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13308:23)
+           at CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\api.steps.ts:38:87)
+   √ After # src\support\hooks.ts:37
+
+4) Scenario: The API should reject invalid input with a 4xx error # features\api_posts.feature:43
+   √ Before # src\support\hooks.ts:33
+   √ When I send a POST to "/posts" with the "wrong_types" payload # src\steps\api.steps.ts:7
+       Attachment (text/x.cucumber.log+plain)
+   × Then the response status is a client error # src\steps\api.steps.ts:36
+       Error: invalid input should be rejected with a 4xx status, got 201
+
+       expect(received).toBeGreaterThanOrEqual(expected)
+
+       Expected: >= 400
+       Received:    201
+           at captureRawStack (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+           at callMatcherAsStep (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13316:57)
+           at Object.toBeGreaterThanOrEqual (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13308:23)
+           at CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\api.steps.ts:38:87)
+   √ After # src\support\hooks.ts:37
+
+5) Scenario: The API should reject invalid input with a 4xx error # features\api_posts.feature:44
+   √ Before # src\support\hooks.ts:33
+   √ When I send a POST to "/posts" with the "negative_userid" payload # src\steps\api.steps.ts:7
+       Attachment (text/x.cucumber.log+plain)
+   × Then the response status is a client error # src\steps\api.steps.ts:36
+       Error: invalid input should be rejected with a 4xx status, got 201
+
+       expect(received).toBeGreaterThanOrEqual(expected)
+
+       Expected: >= 400
+       Received:    201
+           at captureRawStack (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+           at callMatcherAsStep (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13316:57)
+           at Object.toBeGreaterThanOrEqual (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13308:23)
+           at CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\api.steps.ts:38:87)
+   √ After # src\support\hooks.ts:37
+
+6) Scenario: Malformed JSON should not cause a server error # features\api_posts.feature:47
+   √ Before # src\support\hooks.ts:33
+   √ When I send a POST to "/posts" with the "malformed_json" payload # src\steps\api.steps.ts:7
+       Attachment (text/x.cucumber.log+plain)
+   × Then the response status is not a server error # src\steps\api.steps.ts:32
+       Error: a 5xx status means the server failed on this input
+
+       expect(received).toBeLessThan(expected)
+
+       Expected: < 500
+       Received:   500
+           at captureRawStack (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+           at callMatcherAsStep (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13316:57)
+           at Object.toBeLessThan (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\node_modules\playwright\lib\matchers\expect.js:13308:23)
+           at CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\api.steps.ts:33:93)
+   √ After # src\support\hooks.ts:37
+
+6 scenarios (6 failed)
+12 steps (6 failed, 6 passed)
+0m02.114s (executing steps: 0m02.076s)

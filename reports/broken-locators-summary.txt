@@ -1,0 +1,70 @@
+Failures:
+
+1) Scenario: Broken locator calculateButton cannot find its element # features\broken_locators.feature:13
+   √ Before # src\support\hooks.ts:29
+   √ Given I open the application # src\steps\ui.steps.ts:19
+   × When I use the broken locator "calculateButton" # src\steps\broken.steps.ts:6
+       locator.click: Timeout 3000ms exceeded.
+       Call log:
+       [2m  - waiting for locator('#calc-btn-old')[22m
+
+           at BrokenLocators.use (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\pages\BrokenLocators.ts:114:23)
+           at async CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\broken.steps.ts:7:3)
+   √ After # src\support\hooks.ts:37
+       Attachment (image/png)
+
+2) Scenario: Broken locator amountInput cannot find its element # features\broken_locators.feature:14
+   √ Before # src\support\hooks.ts:29
+   √ Given I open the application # src\steps\ui.steps.ts:19
+   × When I use the broken locator "amountInput" # src\steps\broken.steps.ts:6
+       locator.fill: Timeout 3000ms exceeded.
+       Call log:
+       [2m  - waiting for locator('//div[2]/div/form/div[1]/input')[22m
+
+           at BrokenLocators.use (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\pages\BrokenLocators.ts:117:23)
+           at async CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\broken.steps.ts:7:3)
+   √ After # src\support\hooks.ts:37
+       Attachment (image/png)
+
+3) Scenario: Broken locator totalInterestText cannot find its element # features\broken_locators.feature:15
+   √ Before # src\support\hooks.ts:29
+   √ Given I open the application # src\steps\ui.steps.ts:19
+   × When I use the broken locator "totalInterestText" # src\steps\broken.steps.ts:6
+       locator.innerText: Timeout 3000ms exceeded.
+       Call log:
+       [2m  - waiting for locator('.summary-total-interest')[22m
+
+           at BrokenLocators.use (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\pages\BrokenLocators.ts:120:23)
+           at async CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\broken.steps.ts:7:3)
+   √ After # src\support\hooks.ts:37
+       Attachment (image/png)
+
+4) Scenario: Broken locator reportTab cannot find its element # features\broken_locators.feature:16
+   √ Before # src\support\hooks.ts:29
+   √ Given I open the application # src\steps\ui.steps.ts:19
+   × When I use the broken locator "reportTab" # src\steps\broken.steps.ts:6
+       locator.click: Timeout 3000ms exceeded.
+       Call log:
+       [2m  - waiting for getByRole('tab', { name: 'EMI Reports', exact: true })[22m
+
+           at BrokenLocators.use (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\pages\BrokenLocators.ts:114:23)
+           at async CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\broken.steps.ts:7:3)
+   √ After # src\support\hooks.ts:37
+       Attachment (image/png)
+
+5) Scenario: Broken locator pieChart cannot find its element # features\broken_locators.feature:17
+   √ Before # src\support\hooks.ts:29
+   √ Given I open the application # src\steps\ui.steps.ts:19
+   × When I use the broken locator "pieChart" # src\steps\broken.steps.ts:6
+       locator.waitFor: Timeout 3000ms exceeded.
+       Call log:
+       [2m  - waiting for getByTestId('emi-chart-pie') to be visible[22m
+
+           at BrokenLocators.use (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\pages\BrokenLocators.ts:123:23)
+           at async CustomWorld.<anonymous> (C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\src\steps\broken.steps.ts:7:3)
+   √ After # src\support\hooks.ts:37
+       Attachment (image/png)
+
+5 scenarios (5 failed)
+10 steps (5 failed, 5 passed)
+0m17.161s (executing steps: 0m17.133s)

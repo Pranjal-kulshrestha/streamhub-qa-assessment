@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-10-28T04:28:56.562Z",
+  "mode": "rule-based",
+  "results": [
+    {
+      "id": "calculateButton",
+      "intent": "Click the Calculate button on the EMI Report view",
+      "brokenLocator": "page.locator('#calc-btn-old')",
+      "detected": true,
+      "mode": "rule-based",
+      "candidates": [
+        {
+          "locator": "getByRole('button', { name: 'Calculate' })",
+          "reason": "role and accessible name from hints",
+          "confidence": 0.85,
+          "validation": {
+            "candidate": "getByRole('button', { name: 'Calculate' })",
+            "passed": true,
+            "checks": {
+              "matchesExactlyOne": true,
+              "visible": true,
+              "enabled": true,
+              "actionSucceeds": true
+            }
+          }
+        }
+      ],
+      "proposedFix": "getByRole('button', { name: 'Calculate' })",
+      "status": "healed-proposal"
+    },
+    {
+      "id": "amountInput",
+      "intent": "Type a value into the Loan amount field on the EMI Report view",
+      "brokenLocator": "page.locator('//div[2]/div/form/div[1]/input')",
+      "detected": true,
+      "mode": "rule-based",
+      "candidates": [
+        {
+          "locator": "getByLabel('Loan amount')",
+          "reason": "form label from hints",
+          "confidence": 0.85,
+          "validation": {
+            "candidate": "getByLabel('Loan amount')",
+            "passed": true,
+            "checks": {
+              "matchesExactlyOne": true,
+              "visible": true,
+              "editable": true,
+              "actionSucceeds": true
+            }
+          }
+        }
+      ],
+      "proposedFix": "getByLabel('Loan amount')",
+      "status": "healed-proposal"
+    },
+    {
+      "id": "totalInterestText",
+      "intent": "Read the Total interest value shown in the portfolio summary on the Dashboard",
+      "brokenLocator": "page.locator('.summary-total-interest')",
+      "detected": true,
+      "mode": "rule-based",
+      "candidates": [
+        {
+          "locator": "getByTestId('total-interest')",
+          "reason": "data-testid from hints",
+          "confidence": 0.9,
+          "validation": {
+            "candidate": "getByTestId('total-interest')",
+            "passed": true,
+            "checks": {
+              "matchesExactlyOne": true,
+              "visible": true,
+              "actionSucceeds": true
+            }
+          }
+        }
+      ],
+      "proposedFix": "getByTestId('total-interest')",
+      "status": "healed-proposal"
+    },
+    {
+      "id": "reportTab",
+      "intent": "Click the tab that opens the EMI Report view",
+      "brokenLocator": "page.getByRole('tab', { name: 'EMI Reports', exact: true })",
+      "detected": true,
+      "mode": "rule-based",
+      "candidates": [
+        {
+          "locator": "getByRole('tab', { name: 'EMI Report' })",
+          "reason": "role and accessible name from hints",
+          "confidence": 0.85,
+          "validation": {
+            "candidate": "getByRole('tab', { name: 'EMI Report' })",
+            "passed": true,
+            "checks": {
+              "matchesExactlyOne": true,
+              "visible": true,
+              "enabled": true,
+              "actionSucceeds": true
+            }
+          }
+        }
+      ],
+      "proposedFix": "getByRole('tab', { name: 'EMI Report' })",
+      "status": "healed-proposal"
+    },
+    {
+      "id": "pieChart",
+      "intent": "Check that the principal versus interest pie chart is visible after a calculation",
+      "brokenLocator": "page.getByTestId('emi-chart-pie')",
+      "detected": true,
+      "mode": "rule-based",
+      "candidates": [
+        {
+          "locator": "getByTestId('emi-pie-chart')",
+          "reason": "data-testid from hints",
+          "confidence": 0.9,
+          "validation": {
+            "candidate": "getByTestId('emi-pie-chart')",
+            "passed": true,
+            "checks": {
+              "matchesExactlyOne": true,
+              "visible": true,
+              "actionSucceeds": true
+            }
+          }
+        }
+      ],
+      "proposedFix": "getByTestId('emi-pie-chart')",
+      "status": "healed-proposal"
+    }
+  ]
+}

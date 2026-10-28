@@ -1,0 +1,12 @@
+
+> streamhub-qa-assessment@1.0.0 heal
+> ts-node healing/healer.ts
+
+HEAL  calculateButton: page.locator('#calc-btn-old')  ->  getByRole('button', { name: 'Calculate' })
+HEAL  amountInput: page.locator('//div[2]/div/form/div[1]/input')  ->  getByLabel('Loan amount')
+HEAL  totalInterestText: page.locator('.summary-total-interest')  ->  getByTestId('total-interest')
+HEAL  reportTab: page.getByRole('tab', { name: 'EMI Reports', exact: true })  ->  getByRole('tab', { name: 'EMI Report' })
+HEAL  pieChart: page.getByTestId('emi-chart-pie')  ->  getByTestId('emi-pie-chart')
+
+5/5 broken locators have a validated fix proposal. Report: C:\Users\pranj\OneDrive\Documents\Freelance\streamhub-qa-assessment\healing\healing-report.json
+No source files were modified. A human reviews and applies the proposals.

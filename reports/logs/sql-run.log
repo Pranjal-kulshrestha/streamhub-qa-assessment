@@ -1,0 +1,8 @@
+
+> streamhub-qa-assessment@1.0.0 sql
+> ts-node scripts/run-sql.ts
+
+(node:33316) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+Scenario 1: 4 rows, independent check MATCH
+Scenario 2: 4 rows, independent check MATCH

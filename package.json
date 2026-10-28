@@ -1,0 +1,27 @@
+{
+  "name": "streamhub-qa-assessment",
+  "version": "1.0.0",
+  "description": "Playwright + Cucumber (TypeScript) automation framework for a small Loan EMI web app, JSONPlaceholder API tests and SQL scenarios",
+  "private": true,
+  "scripts": {
+    "start": "node app/server.js",
+    "test": "cucumber-js",
+    "test:ui": "cucumber-js --tags \"@ui and not @broken-locator\"",
+    "test:api": "cucumber-js --tags \"@api and not @known-issue\"",
+    "test:known-issues": "cucumber-js --profile known",
+    "test:broken": "cucumber-js --profile broken",
+    "heal": "ts-node healing/healer.ts",
+    "sql": "ts-node scripts/run-sql.ts",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22.0.0",
+    "chart.js": "^4.4.0",
+    "dotenv": "^16.4.0",
+    "playwright": "^1.50.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.0"
+  }
+}

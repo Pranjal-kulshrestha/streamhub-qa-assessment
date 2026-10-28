@@ -1,0 +1,2098 @@
+[
+  {
+    "description": "  Objective: the API must handle boundary and invalid input without server-side failures.\n\n  NOTE: JSONPlaceholder is a mock API that accepts almost any body. Scenarios in the default run\n  therefore assert what matters for robustness (no 5xx, fast response, valid JSON) and record\n  the actual status. Scenarios tagged @known-issue assert the stricter expectation from the brief\n  (4xx for invalid data) and are expected to fail against this service. Run them with\n  `npm run test:known-issues`. See README \"API test findings\".",
+    "elements": [
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);baseline---a-valid-post-is-created",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Baseline - a valid post is created",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 48659599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I send a POST to \"/posts\" with the \"valid\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 352364400
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW3ZhbGlkXSAtPiAyMDEgaW4gMzUxIG1z",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the response status is 201",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3249099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the response is JSON containing an id",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1907400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 589699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2128299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);invalid-or-extreme-payloads-do-not-cause-a-server-failure",
+        "keyword": "Scenario Outline",
+        "line": 25,
+        "name": "Invalid or extreme payloads do not cause a server failure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1556399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I send a POST to \"/posts\" with the \"long_title\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 420274600
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW2xvbmdfdGl0bGVdIC0+IDIwMSBpbiA0MTkgbXM=",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status is not a server error",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1104100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 744000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the actual status is recorded in the test log",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 737999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1833499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);invalid-or-extreme-payloads-do-not-cause-a-server-failure",
+        "keyword": "Scenario Outline",
+        "line": 26,
+        "name": "Invalid or extreme payloads do not cause a server failure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1338299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I send a POST to \"/posts\" with the \"special_characters\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 358231400
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW3NwZWNpYWxfY2hhcmFjdGVyc10gLT4gMjAxIGluIDM1NyBtcw==",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status is not a server error",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1117099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 551500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the actual status is recorded in the test log",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 735799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2027000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);invalid-or-extreme-payloads-do-not-cause-a-server-failure",
+        "keyword": "Scenario Outline",
+        "line": 27,
+        "name": "Invalid or extreme payloads do not cause a server failure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1464500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I send a POST to \"/posts\" with the \"missing_userid\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 338713800
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW21pc3NpbmdfdXNlcmlkXSAtPiAyMDEgaW4gMzM4IG1z",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status is not a server error",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 710000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 660499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the actual status is recorded in the test log",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 740899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1864900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);invalid-or-extreme-payloads-do-not-cause-a-server-failure",
+        "keyword": "Scenario Outline",
+        "line": 28,
+        "name": "Invalid or extreme payloads do not cause a server failure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1412800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I send a POST to \"/posts\" with the \"missing_title\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 308714700
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW21pc3NpbmdfdGl0bGVdIC0+IDIwMSBpbiAzMDcgbXM=",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status is not a server error",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 587099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 983299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the actual status is recorded in the test log",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 864300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1526200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);invalid-or-extreme-payloads-do-not-cause-a-server-failure",
+        "keyword": "Scenario Outline",
+        "line": 29,
+        "name": "Invalid or extreme payloads do not cause a server failure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1189699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I send a POST to \"/posts\" with the \"empty_object\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 301478700
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW2VtcHR5X29iamVjdF0gLT4gMjAxIGluIDMwMCBtcw==",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status is not a server error",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 755300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 672700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the actual status is recorded in the test log",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 794299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1568199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);invalid-or-extreme-payloads-do-not-cause-a-server-failure",
+        "keyword": "Scenario Outline",
+        "line": 30,
+        "name": "Invalid or extreme payloads do not cause a server failure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1303399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I send a POST to \"/posts\" with the \"wrong_types\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 338831599
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW3dyb25nX3R5cGVzXSAtPiAyMDEgaW4gMzM4IG1z",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status is not a server error",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 515899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 491199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the actual status is recorded in the test log",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 645099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1431099
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder);invalid-or-extreme-payloads-do-not-cause-a-server-failure",
+        "keyword": "Scenario Outline",
+        "line": 31,
+        "name": "Invalid or extreme payloads do not cause a server failure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1219699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I send a POST to \"/posts\" with the \"negative_userid\" payload",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 304782600
+            },
+            "embeddings": [
+              {
+                "data": "UE9TVCAvcG9zdHMgW25lZ2F0aXZlX3VzZXJpZF0gLT4gMjAxIGluIDMwNCBtcw==",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status is not a server error",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 607100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the response time is within the limit",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 540299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the actual status is recorded in the test log",
+            "match": {
+              "location": "src\\steps\\api.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 587399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1547599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "post-/posts-boundary-and-invalid-data-(jsonplaceholder)",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "POST /posts boundary and invalid data (JSONPlaceholder)",
+    "tags": [
+      {
+        "name": "@api",
+        "line": 1
+      }
+    ],
+    "uri": "features\\api_posts.feature"
+  },
+  {
+    "description": "  Charts are canvas elements, so the app exposes the plotted values on the canvas\n  (data-values) and the tests check them for validity.",
+    "elements": [
+      {
+        "description": "",
+        "id": "charts-render-valid-data;dashboard-bar-chart-is-visible-with-valid-non-zero-data",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Dashboard bar chart is visible with valid non-zero data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 179746500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 95504100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the dashboard bar chart is visible",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:110"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54826000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the bar chart has 3 bars, all with values greater than zero",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7133200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 86465400
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@chart",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "charts-render-valid-data;pie-chart-shows-principal-and-interest-for-a-calculated-loan",
+        "keyword": "Scenario Outline",
+        "line": 21,
+        "name": "Pie chart shows principal and interest for a calculated loan",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 166709200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 106854000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 66079700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I calculate a loan of 2500000 at 10 percent for 10 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85143599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "the pie chart is visible",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:125"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5913000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "both pie chart sections have values greater than zero",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:129"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8209699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the pie chart sections equal the independently calculated principal and interest for 2500000, 10 and 10",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5850500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 128661300
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@chart",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "charts-render-valid-data;pie-chart-shows-principal-and-interest-for-a-calculated-loan",
+        "keyword": "Scenario Outline",
+        "line": 22,
+        "name": "Pie chart shows principal and interest for a calculated loan",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 177762200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 89218799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58937500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I calculate a loan of 5000000 at 7.5 percent for 15 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 71115699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "the pie chart is visible",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:125"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6535300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "both pie chart sections have values greater than zero",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:129"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8784200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the pie chart sections equal the independently calculated principal and interest for 5000000, 7.5 and 15",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3803499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 122266800
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@chart",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "charts-render-valid-data",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Charts render valid data",
+    "tags": [
+      {
+        "name": "@ui",
+        "line": 1
+      },
+      {
+        "name": "@chart",
+        "line": 1
+      }
+    ],
+    "uri": "features\\chart.feature"
+  },
+  {
+    "description": "  As a loan analyst I want a summary of my loan portfolio\n  so that I can see total exposure at a glance.",
+    "elements": [
+      {
+        "description": "",
+        "id": "dashboard;dashboard-loads-with-the-portfolio-summary",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Dashboard loads with the portfolio summary",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 161281399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94976200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the page title \"Loan EMI Dashboard\" is visible",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46920399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the dashboard shows 3 loans in the portfolio table",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13007000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "the portfolio summary cards are populated",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 48548599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "there are no console errors",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1315300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 102237199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@dashboard",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard;dashboard-totals-match-independently-calculated-values",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Dashboard totals match independently calculated values",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 168111000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91474900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "the dashboard totals match the independently calculated values for the sample loans",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37518500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 111739099
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@dashboard",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard;user-navigates-to-the-emi-report-view",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "User navigates to the EMI report view",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 174449400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94398300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 66991500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the EMI form is displayed with its three inputs",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18423200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the \"Dashboard\" content is hidden",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5529300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 88288399
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@dashboard",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "dashboard",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Dashboard",
+    "tags": [
+      {
+        "name": "@ui",
+        "line": 1
+      },
+      {
+        "name": "@dashboard",
+        "line": 1
+      }
+    ],
+    "uri": "features\\dashboard.feature"
+  },
+  {
+    "description": "  The report view calculates EMI from the user's input. Expected values are calculated\n  independently in test code, not copied from the page.",
+    "elements": [
+      {
+        "description": "",
+        "id": "emi-report;submitted-input-produces-the-independently-calculated-output",
+        "keyword": "Scenario Outline",
+        "line": 18,
+        "name": "Submitted input produces the independently calculated output",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 160867500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94539400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 64699000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I calculate a loan of 2500000 at 10 percent for 10 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 71230600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the displayed EMI matches the independently calculated EMI for 2500000, 10 and 10",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10622500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the displayed total interest and total payment match for 2500000, 10 and 10",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11334699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the yearly schedule has 10 rows",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:96"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8331900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 130248499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@report",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-report;submitted-input-produces-the-independently-calculated-output",
+        "keyword": "Scenario Outline",
+        "line": 19,
+        "name": "Submitted input produces the independently calculated output",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 173790899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94431899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63579600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I calculate a loan of 5000000 at 7.5 percent for 15 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72002399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the displayed EMI matches the independently calculated EMI for 5000000, 7.5 and 15",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8619900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the displayed total interest and total payment match for 5000000, 7.5 and 15",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8228699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the yearly schedule has 15 rows",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:96"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7712299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 137989400
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@report",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-report;submitted-input-produces-the-independently-calculated-output",
+        "keyword": "Scenario Outline",
+        "line": 20,
+        "name": "Submitted input produces the independently calculated output",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 156821500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 87727300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 67645599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I calculate a loan of 1000000 at 12 percent for 5 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70997600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the displayed EMI matches the independently calculated EMI for 1000000, 12 and 5",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9897499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the displayed total interest and total payment match for 1000000, 12 and 5",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6754600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the yearly schedule has 5 rows",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:96"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4693199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 105317699
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@report",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-report;invalid-input-is-rejected-with-a-clear-message",
+        "keyword": "Scenario Outline",
+        "line": 29,
+        "name": "Invalid input is rejected with a clear message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 154091099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 89694100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57438099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I calculate a loan of 0 at 10 percent for 10 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 66390400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I see the error message \"Enter a loan amount greater than 0.\"",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5894500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "no results are shown",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5458699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 83793999
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@report",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-report;invalid-input-is-rejected-with-a-clear-message",
+        "keyword": "Scenario Outline",
+        "line": 30,
+        "name": "Invalid input is rejected with a clear message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 168680400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92933100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 56748999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I calculate a loan of -500 at 10 percent for 10 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63999100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I see the error message \"Enter a loan amount greater than 0.\"",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5218499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "no results are shown",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3799100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 80404099
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@report",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-report;invalid-input-is-rejected-with-a-clear-message",
+        "keyword": "Scenario Outline",
+        "line": 31,
+        "name": "Invalid input is rejected with a clear message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 160669800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88295700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45833900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I calculate a loan of 100000 at 75 percent for 10 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 65913200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I see the error message \"Enter an interest rate between 0 and 50.\"",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5572099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "no results are shown",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5254600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 82729899
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@report",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-report;invalid-input-is-rejected-with-a-clear-message",
+        "keyword": "Scenario Outline",
+        "line": 32,
+        "name": "Invalid input is rejected with a clear message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 161114799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the application",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91878799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I open the \"EMI Report\" view",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53921000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I calculate a loan of 100000 at 10 percent for 0 years",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80387199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I see the error message \"Enter a whole number of years between 1 and 40.\"",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5541800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "no results are shown",
+            "match": {
+              "location": "src\\steps\\ui.steps.ts:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4945399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 82710100
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@report",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "emi-report",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "EMI report",
+    "tags": [
+      {
+        "name": "@ui",
+        "line": 1
+      },
+      {
+        "name": "@report",
+        "line": 1
+      }
+    ],
+    "uri": "features\\report.feature"
+  }
+]

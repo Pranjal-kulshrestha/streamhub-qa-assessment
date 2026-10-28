@@ -1,0 +1,11 @@
+
+> streamhub-qa-assessment@1.0.0 test
+> cucumber-js
+
+This Node.js version (v25.1.0) has not been tested with this version of Cucumber; it should work normally, but please raise an issue if you see anything unexpected.
+Cannot use 'progress-bar' formatter for output to 'stdout' as not a TTY. Switching to 'progress' formatter.
+..........................................................................................................................................
+
+21 scenarios (21 passed)
+96 steps (96 passed)
+0m09.252s (executing steps: 0m09.174s)

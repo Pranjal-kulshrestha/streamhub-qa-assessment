@@ -1,0 +1,3 @@
+21 scenarios (21 passed)
+96 steps (96 passed)
+0m09.252s (executing steps: 0m09.174s)

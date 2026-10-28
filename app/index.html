@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan EMI Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1 data-testid="app-title">Loan EMI Dashboard</h1>
+    <nav role="tablist" aria-label="Main views">
+      <button role="tab" id="tab-dashboard" aria-controls="view-dashboard" aria-selected="true" type="button">Dashboard</button>
+      <button role="tab" id="tab-report" aria-controls="view-report" aria-selected="false" type="button">EMI Report</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-dashboard" role="tabpanel" aria-labelledby="tab-dashboard">
+      <h2>Portfolio summary</h2>
+      <div class="cards">
+        <article class="card"><h3>Loans</h3><p data-testid="loan-count">-</p></article>
+        <article class="card"><h3>Total principal</h3><p data-testid="total-principal">-</p></article>
+        <article class="card"><h3>Total interest</h3><p data-testid="total-interest">-</p></article>
+        <article class="card"><h3>Average EMI</h3><p data-testid="average-emi">-</p></article>
+      </div>
+
+      <h2>Monthly EMI by loan</h2>
+      <div class="chart-box"><canvas id="loans-bar-chart" data-testid="loans-bar-chart" aria-label="Bar chart of monthly EMI by loan" role="img"></canvas></div>
+
+      <h2>Loan portfolio</h2>
+      <table data-testid="loans-table" aria-label="Loan portfolio">
+        <thead><tr><th scope="col">Loan</th><th scope="col">Amount</th><th scope="col">Rate %</th><th scope="col">Years</th><th scope="col">EMI</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="view-report" role="tabpanel" aria-labelledby="tab-report" hidden>
+      <h2>EMI report</h2>
+      <form id="emi-form" novalidate>
+        <div class="field">
+          <label for="amount">Loan amount (INR)</label>
+          <input id="amount" name="amount" type="number" inputmode="decimal" value="2500000">
+        </div>
+        <div class="field">
+          <label for="rate">Interest rate (% per year)</label>
+          <input id="rate" name="rate" type="number" inputmode="decimal" step="0.01" value="10">
+        </div>
+        <div class="field">
+          <label for="tenure">Tenure (years)</label>
+          <input id="tenure" name="tenure" type="number" inputmode="numeric" value="10">
+        </div>
+        <button type="submit">Calculate</button>
+        <p id="form-error" role="alert" data-testid="form-error" class="error" hidden></p>
+      </form>
+
+      <div id="results" hidden>
+        <h3>Results</h3>
+        <dl class="results">
+          <dt>Monthly EMI</dt><dd data-testid="emi-result">-</dd>
+          <dt>Total interest</dt><dd data-testid="total-interest-result">-</dd>
+          <dt>Total payment</dt><dd data-testid="total-payment-result">-</dd>
+        </dl>
+
+        <h3>Principal vs interest</h3>
+        <div class="chart-box small"><canvas id="emi-pie-chart" data-testid="emi-pie-chart" aria-label="Pie chart of principal versus interest" role="img"></canvas></div>
+
+        <h3>Yearly schedule</h3>
+        <table data-testid="schedule-table" aria-label="Yearly repayment schedule">
+          <thead><tr><th scope="col">Year</th><th scope="col">Principal paid</th><th scope="col">Interest paid</th><th scope="col">Closing balance</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/vendor/chart.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
