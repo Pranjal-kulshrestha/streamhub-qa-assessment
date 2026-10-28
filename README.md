@@ -15,6 +15,8 @@ I chose **Section A: Web Application + UI Automation** (A1 app, A2 UI tests, A3 
 | Self-healing POC | `npm run heal` | 5 of 5 broken locators get a validated fix proposal |
 | SQL | `npm run sql` | Both scenarios match an independent JavaScript calculation |
 
+**View the HTML reports online:** https://pranjal-kulshrestha.github.io/streamhub-qa-assessment/ (GitHub shows `.html` files as source code, so use this link or open the file locally after cloning).
+
 Evidence is committed in [`reports/`](reports) and [`sql/screenshots/`](sql/screenshots):
 - `reports/cucumber-report.html` main HTML report (open in a browser), `reports/cucumber-report.json`, `reports/summary.txt`
 - `reports/known-issues-report.html`, `reports/broken-locators-report.html`
